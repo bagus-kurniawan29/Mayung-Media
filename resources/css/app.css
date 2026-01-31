@@ -1,0 +1,38 @@
+@import "tailwindcss"; /* Ini akan menghilangkan garis kuning di @tailwind */
+@import "./hamburgers.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+    /* Masukkan variabel warna Anda di sini agar tidak hilang */
+    --color-primary: #1E293B;
+    --color-secondary: #0F172A;
+    --color-alam: #228B22;
+    --color-berdaya: #FF8C00;
+    --color-budaya: #8B4513;
+    --color-suara: #4682B4;
+}
+
+@layer base {
+  nav::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+     background-color: #111827;
+    opacity: 0.05;
+    backdrop-filter: blur(4px);
+  }
+}
+@layer utilities {
+    /* Tambahan manual jika !md:hidden di atas masih belum mempan */
+    @media (min-width: 768px) {
+        .hamburger {
+            display: none !important;
+        }
+    }
+}

@@ -1,0 +1,181 @@
+@import '../../../../vendor/filament/filament/resources/css/theme.css';
+
+@source '../../../../app/Filament/**/*';
+@source '../../../../resources/views/filament/**/*';
+
+@layer components {
+    /* 1. PERBAIKAN SIDEBAR AKTIF (Hapus background putih) */
+    .fi-sidebar-item.fi-active > .fi-sidebar-item-btn {
+        background-color: #1E293B !important; /* Warna Navy Terang saat aktif */
+    }
+}
+    .fi-ta-header-cell{
+        color: white !important;
+        background-color: #1E293B !important;
+    }
+    .fi-ta-actions-header-cell{
+        background-color: #1E293B !important;
+    }
+    /* 1. DASAR & LAYOUT */
+    .fi-ac-btn{
+        background-color: #1E293B;
+        color: white;
+    }
+    body, .fi-layout, .fi-main, .fi-main-ctn {
+        background-color: #0F172A !important;
+        color: #F8FAFC !important;
+    }
+
+    /* 2. HEADER & JUDUL */
+    .fi-header-heading,
+    .fi-header-title,
+    h1, h2, h3, h4, h5 {
+        color: #F8FAFC !important;
+    }
+    .fi-card *,
+    .fi-wi *,
+    .fi-section * {
+    color: #E5E7EB !important;
+    }
+    .fi-sidebar-item.fi-active .fi-sidebar-item-button {
+    background-color: #1E293B !important;
+    }
+
+/* Memastikan teks tetap putih terang saat aktif agar kontras */
+    .fi-sidebar-item.fi-active .fi-sidebar-item-button .fi-sidebar-item-label {
+    color: #FFFFFF !important;
+    }
+
+/* Warna saat tidak aktif (opsional, agar tetap bersih) */
+    .fi-sidebar-item:not(.fi-active) .fi-sidebar-item-button {
+    background-color: transparent;
+    }
+    .fi-input-wrp-prefix {
+        background-color: #0F172A !important;
+    }
+    .fi-btn {
+        background-color: #1E293B !important;
+        color: white !important;
+    }
+    /* 3. TABEL */
+    .fi-ta-ctn,
+    .fi-ta-content,
+    .fi-ta-header,
+    .fi-ta-empty-state,
+    .fi-ta-row {
+        background-color: #1E293B !important;
+        border-color: rgba(255,255,255,0.08) !important;
+    }
+
+    .fi-ta-cell,
+    .fi-ta-text-item,
+    .fi-ta-text-item-label,
+    .fi-ta-header-cell-label,
+    .fi-ta-placeholder {
+        color: #F8FAFC !important;
+    }
+
+    /* 4. FORM & INPUT */
+    input,
+    textarea,
+    select,
+    .fi-fo-rich-editor-content {
+        background-color: #0F172A !important;
+        color: #F8FAFC !important;
+        border: 1px solid rgba(255,255,255,.15) !important;
+    }
+
+    .fi-fo-rich-editor-content * {
+        color: #F8FAFC !important;
+    }
+    .fi-header-heading,
+    .fi-header-title,
+    h1, h2, h3, h4, h5 {
+        color: #F8FAFC !important;
+    }
+    .fi-topbar,
+    .fi-topbar nav,
+    .fi-topbar header {
+        background-color: #0F172A !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    label,
+    .fi-fo-field-wrp-label span {
+        color: #F8FAFC !important;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+        color: #94A3B8 !important;
+    }
+    .fi-sidebar {
+    background-color: #020617 !important;
+    }
+    /* 5. SIDEBAR */
+    .fi-sidebar {
+        background-color: #0F172A !important;
+    }
+
+    .fi-sidebar-item {
+        background-color: transparent !important;
+    }
+    .fi-header-heading,
+        .fi-header-title {
+    color: #F8FAFC !important;
+    }
+    .fi-sidebar-item-label,
+    .fi-sidebar-item-icon {
+        color: #CBD5E1 !important;
+    }
+
+    .fi-sidebar-item-active {
+        background-color: #1E293B !important;
+    }
+
+    .fi-sidebar-item-active
+    .fi-sidebar-item-label,
+    .fi-sidebar-item-active
+    .fi-sidebar-item-icon {
+        color: #FFFFFF !important;
+    }
+
+    /* 6. CARD, WIDGET, SECTION (ANTI PUTIH TOTAL) */
+    .fi-card,
+    .fi-wi,
+    .fi-section,
+    .fi-modal-content,
+    .fi-dropdown-panel {
+        background-color: #1E293B !important;
+        color: #F8FAFC !important;
+        border: 1px solid rgba(255,255,255,.08) !important;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+    .fi-simple-header-heading{
+        font-family: 'fairplay display';
+    }
+    .fi-simple-main-ctn {
+        background-color: #1E293B !important;
+    }
+    .fi-simple-main {
+        background-color: #0F172A !important;
+    }
+
+    .fi-fo-field-label-content{
+        color: white !important;
+    }
+
+    .fi-auth-card button {
+        background-color: #0F172A !important;
+        color: #F8FAFC !important;
+        border-color: rgba(255,255,255,.15) !important;
+    }
+
+    .fi-auth-card a {
+        color: #E2E8F0 !important;
+    }
+
+    .fi-admin-login-page h1 {
+        font-family: 'Playfair Display', serif !important;
+        font-weight: 700 !important;
+        color: #F8FAFC !important;
+    }
