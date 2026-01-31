@@ -2,8 +2,9 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "dev": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "vercel-build": "echo 'Skip build on server'" 
     },
     "devDependencies": {
         "@tailwindcss/postcss": "^4.1.18",
