@@ -31,18 +31,22 @@
 </head>
 
 <body class="bg-secondary text-white antialiased min-h-screen">
-    <header id="main-navbar" class="fixed top-0 left-0 w-full h-[80px] z-50 bg-[#111827]/80 backdrop-blur-md transition-all duration-300 border-b border-white/10">
-    <nav class="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
-        <a href="#" class="z-50">
-            <img src="{{ asset('img/logo_putih.webp') }}" alt="Logo Mayung Media" class="h-24 transition-transform hover:scale-105">
+<header id="main-navbar" class="fixed top-0 left-0 w-full h-[80px] z-50 bg-transparent transition-all duration-300 border-b border-transparent">
+    
+    <nav class="max-w-7xl mx-auto h-full flex items-center justify-between px-6">  
+        
+        <a href="{{ route('index') }}" class="z-50">
+            <img src="{{ asset('img/logo_putih.webp') }}" alt="Logo Mayung Media" class="h-10 md:h-16 transition-transform hover:scale-105">
         </a>
+
         <div class="flex items-center">
-            <ul id="nav-menu" class="hidden md:flex absolute md:static top-[80px] left-0 w-full bg-[#111827] md:bg-transparent py-8 md:py-0 space-y-6 md:space-y-0 md:space-x-10 text-2xl md:text-base font-semibold text-center transition-all duration-300">
+            <ul id="nav-menu" class="hidden md:flex absolute md:static top-[80px] left-0 w-full bg-[#111827] md:bg-transparent py-8 md:py-0 space-y-6 md:space-y-0 md:space-x-10 text-2xl md:text-base font-semibold text-center text-white transition-all duration-300">
                 <li><a href="{{ route('portal.kategori', 'alam') }}" class="hover:text-blue-400 transition">Alam</a></li>
                 <li><a href="{{ route('portal.kategori', 'budaya') }}" class="hover:text-blue-400 transition">Budaya</a></li>
                 <li><a href="{{ route('portal.kategori', 'berdaya') }}" class="hover:text-blue-400 transition">Berdaya</a></li>
                 <li><a href="{{ route('portal.kategori', 'suara') }}" class="hover:text-blue-400 transition">Suara</a></li>
             </ul>
+
             <button id="menu-button" class="hamburger hamburger--collapse md:hidden z-50" type="button">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
@@ -83,3 +87,24 @@
             @endforeach
         </div>
     </section>
+<script>
+const menuButton = document.getElementById('menu-button');
+const navMenu = document.getElementById('nav-menu');
+menuButton.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+    menuButton.classList.toggle('is-active');
+}); 
+    window.addEventListener('scroll', function() {
+    const navbar = document.getElementById('main-navbar');
+    
+    // Gunakan classList.toggle untuk kode yang lebih ringkas
+    const isScrolled = window.scrollY > 50;
+    
+    navbar.classList.toggle('bg-[#14192A]', isScrolled);
+    navbar.classList.toggle('backdrop-blur-md', isScrolled);
+    navbar.classList.toggle('border-white/10', isScrolled);
+    
+    navbar.classList.toggle('bg-transparent', !isScrolled);
+    navbar.classList.toggle('border-transparent', !isScrolled);
+});
+</script>

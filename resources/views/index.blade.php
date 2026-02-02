@@ -23,15 +23,16 @@
         }
     </style>
 </head>
-<header id="main-navbar" class="fixed top-0 left-0 w-full h-[80px] z-50 bg-[#111827]/80 backdrop-blur-md transition-all duration-300 border-b border-white/10">
-    <nav class="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
+<header id="main-navbar" class="fixed top-0 left-0 w-full h-[80px] z-50 bg-transparent transition-all duration-300 border-b border-transparent">
+    
+    <nav class="max-w-7xl mx-auto h-full flex items-center justify-between px-6">  
         
-        <a href="#" class="z-50">
+        <a href="{{ route('index') }}" class="z-50">
             <img src="{{ asset('img/logo_putih.webp') }}" alt="Logo Mayung Media" class="h-10 md:h-16 transition-transform hover:scale-105">
         </a>
 
         <div class="flex items-center">
-            <ul id="nav-menu" class="hidden md:flex absolute md:static top-[80px] left-0 w-full bg-[#111827] md:bg-transparent py-8 md:py-0 space-y-6 md:space-y-0 md:space-x-10 text-2xl md:text-base font-semibold text-center transition-all duration-300">
+            <ul id="nav-menu" class="hidden md:flex absolute md:static top-[80px] left-0 w-full bg-[#111827] md:bg-transparent py-8 md:py-0 space-y-6 md:space-y-0 md:space-x-10 text-2xl md:text-base font-semibold text-center text-white transition-all duration-300">
                 <li><a href="{{ route('portal.kategori', 'alam') }}" class="hover:text-blue-400 transition">Alam</a></li>
                 <li><a href="{{ route('portal.kategori', 'budaya') }}" class="hover:text-blue-400 transition">Budaya</a></li>
                 <li><a href="{{ route('portal.kategori', 'berdaya') }}" class="hover:text-blue-400 transition">Berdaya</a></li>
@@ -44,7 +45,6 @@
                 </span>
             </button>
         </div>
-
     </nav>
 </header>
 <body class="bg-primary text-white scroll-smooth tracking-wide">
@@ -148,7 +148,6 @@
         </div>
     </section>
     <section class="px-12 md:px-32 py-12 bg-secondary text-white">
-
         <div class="flex justify-between items-center mb-8">
             <h1 id="alam" class="text-4xl font-semibold">ALAM</h1>
             <a href="{{ route('portal.kategori', 'alam') }}">
@@ -174,7 +173,7 @@
                 </a>
             @endforeach
         </div>
-        <div class="flex justify-between items-center mb-8 mt-16">
+        <div class="flex justify-between items-center mb-8 mt-16 gap-5">
             <h1 id="berdaya" class="text-4xl font-semibold">BERDAYA</h1>
             <a href="{{ route('portal.kategori', 'berdaya') }}">
                 <p class="font-semibold text-lg uppercase">Lihat Semua</p>
@@ -297,7 +296,7 @@
         </p>
     </footer>
     <script>
-        const menuButton = document.getElementById('menu-button');
+const menuButton = document.getElementById('menu-button');
 const navMenu = document.getElementById('nav-menu');
 
 menuButton.addEventListener('click', () => {
@@ -305,17 +304,18 @@ menuButton.addEventListener('click', () => {
     menuButton.classList.toggle('is-active');
 }); 
         window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('main-navbar');
-
-            if (window.scrollY > 50) {
-                navbar.classList.add('bg-[#14192A]', 'backdrop-blur-md', 'border-white/10');
-                navbar.classList.remove('bg-transparent', 'border-transparent');
-            } else {
-                navbar.classList.add('bg-transparent', 'border-transparent');
-                navbar.classList.remove('bg-[#14192A]', 'backdrop-blur-md', 'border-white/10');
-            }
-        });
-
+    const navbar = document.getElementById('main-navbar');
+    
+    // Gunakan classList.toggle untuk kode yang lebih ringkas
+    const isScrolled = window.scrollY > 50;
+    
+    navbar.classList.toggle('bg-[#14192A]', isScrolled);
+    navbar.classList.toggle('backdrop-blur-md', isScrolled);
+    navbar.classList.toggle('border-white/10', isScrolled);
+    
+    navbar.classList.toggle('bg-transparent', !isScrolled);
+    navbar.classList.toggle('border-transparent', !isScrolled);
+});
         function scrollSlider(distance) {
             const slider = document.getElementById('slider');
             slider.scrollBy({
